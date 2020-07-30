@@ -7,19 +7,12 @@ addons:
     organization: "alu0100824810" # the key of the org you chose at step #3
     token:
       secure: $SONAR # encrypted value of your token
-script:
-  # other script steps might be done before running the actual analysis
-  - sonar-scanner
 branches:
   only:
   - develop
   - /^release-[0-999].[0-999]$/
   - master
-notifications:
-  email:
-    recipients:
-      - alu0100824810@ull.edu.es
 script:
   - ng test
-  - ng e2e
+  - sonar-scanner
 #  - mvn sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=alu0100824810 -Dsonar.login=$SONAR
