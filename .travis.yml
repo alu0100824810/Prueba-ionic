@@ -15,4 +15,4 @@ branches:
   - master
 script:
   - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
-  - sonar-scanner -X
+  - sonar-scanner -Dsonar.projectKey=alu0100824810_Prueba-ionic
