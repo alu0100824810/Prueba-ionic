@@ -13,4 +13,5 @@ branches:
   - /^release-[0-999].[0-999]$/
   - master
 script:
-  - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
+  - npm run test --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
+  - sonar-scanner
