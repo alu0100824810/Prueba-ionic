@@ -7,7 +7,7 @@ addons:
    sonarcloud:
     organization: "alu0100824810"
     token:
-      secure: $SONAR
+      secure: ${SONAR}
 branches:
   only:
   - develop
