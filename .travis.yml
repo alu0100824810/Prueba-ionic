@@ -3,6 +3,13 @@ node_js:
   - '14.6.0'
 addons:
   chrome: stable
+  sonarcloud:
+    organization: "alu0100824810" # the key of the org you chose at step #3
+    token:
+      secure: $SONAR # encrypted value of your token
+script:
+  # other script steps might be done before running the actual analysis
+  - sonar-scanner
 branches:
   only:
   - develop
@@ -15,4 +22,4 @@ notifications:
 script:
   - ng test
   - ng e2e
-  - mvn sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=alu0100824810 -Dsonar.login=$SONAR
+#  - mvn sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=alu0100824810 -Dsonar.login=$SONAR
