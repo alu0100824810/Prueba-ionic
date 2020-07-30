@@ -1,14 +1,16 @@
 language: node_js
 node_js:
-  - '12'
-sudo: required
+  - "10"
+
 addons:
-  chrome: stable
+   sonarcloud:
+    organization: "alu0100824810"
+    token:
+      secure: $SONAR
 branches:
   only:
   - develop
   - /^release-[0-999].[0-999]$/
   - master
 script:
-  - ng test
-  - mvn sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=alu0100824810 -Dsonar.login=$SONARs
+  - npm run test && sonar-scanner
