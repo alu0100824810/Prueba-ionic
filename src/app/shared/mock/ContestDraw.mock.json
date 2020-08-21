@@ -1,0 +1,20 @@
+[
+    {
+        "title": "Minuto de Oro Fundación EMMASA",
+        "id": 1,
+        "img": "https://pbs.twimg.com/media/DlryZYDXsAA9sNG.png",
+        "info": "El acto, consiste en una pequeña prueba en la que un asistente al partido tratará de marcar un gol desde el punto de penalti. Si lo logra, se llevará una tablet de última generación a casa.Esta iniciativa se enmarca dentro de la colaboración que mantiene la Fundación EMMASA con el CD Tenerife."
+    },
+    {
+        "title": "Sorteo 2 entradas CD Tenerife - Rayo Vallecano",
+        "id": 2,
+        "img": "https://pbs.twimg.com/media/EQp8pIIWsAE7OmC.jpg",
+        "info": "Sorteamos 2 entradas para el partido de CD Tenerife - Rayo Vallecano en el Heliodoro el próximo domingo a las 19:30h"
+    },
+    {
+        "title": "Gana la camiseta oficial",
+        "id": 3,
+        "img": "https://pbs.twimg.com/media/EQHP5E4XYAIfwLZ.jpg",
+        "info": "¡Gana la camiseta oficial de la temporada 19/20 del CD Tenerife!"
+    }
+]

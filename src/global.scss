@@ -24,3 +24,84 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+@import './theme/fix/index.scss';
+
+
+/* ICONOS */
+ion-icon , fa-icon{
+  font-size: 1.2em;
+}
+
+/* FONT */
+* {
+  font-family: 'Lato', sans-serif;
+}
+
+// Permite a los label de un formlario crecer
+.am-textarea-label.am-textarea-label-5,
+.am-list-item .am-input-label.am-input-label-5 {
+  width: auto;
+}
+
+// permite que las preguntas largas tengan mas de una linea
+.am-list-item .am-list-line .am-list-content {
+  white-space: inherit;
+}
+
+
+// permite agregar el color a nivel global para usarlo en toda la App
+.ion-color-transparent {
+  --ion-color-base        : var(--ion-color-transparent) !important;
+  --ion-color-base-rgb    : var(--ion-color-transparent-rgb) !important;
+  --ion-color-contrast    : var(--ion-color-transparent-contrast) !important;
+  --ion-color-contrast-rgb: var(--ion-color-transparent-contrast-rgb) !important;
+  --ion-color-shade       : var(--ion-color-gotransparentld-shade) !important;
+  --ion-color-tint        : var(--ion-color-transparent-tint) !important;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.picker-button.sc-ion-picker-md,
+.picker-button.activated.sc-ion-picker-md,
+.picker-button.sc-ion-picker-ios,
+.picker-button.activated.sc-ion-picker-ios,
+.action-sheet-button.ion-activatable.action-sheet-selected {
+  color  : var(--ion-color-details);
+  --color: var(--ion-color-details);
+}
+
+.am-list-body {
+  border: none;
+
+  &::before {
+    display: none !important;
+  }
+}
+
+.picker-opt.picker-opt-selected,
+.picker-prefix,
+.picker-suffix {
+  color: var(--ion-color-details)
+}
+
+.action-sheet-button.ion-activatable.action-sheet-,
+.action-sheet-button.ion-activatable.action-sheet-cancel.sc-ion-action-sheet-ios {
+  color: black
+}
+
+ion-toolbar.search {
+  //position: fixed;
+  z-index   : 300;
+}
+
+.disabled {
+  opacity: .5 !important;
+}
+
+:root {
+  ion-back-button {
+    --color: var(--ion-color-primary-contrast ) !important;
+  }
+}

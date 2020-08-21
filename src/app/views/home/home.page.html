@@ -1,0 +1,26 @@
+
+<app-sidebar-menu #menu></app-sidebar-menu>
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="news">
+      <fa-icon [icon]="icons.newspaper"></fa-icon>
+      <ion-label>Noticias</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="matches">
+      <fa-icon [icon]="icons.matches"></fa-icon>
+      <ion-label>Partidos</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="team">
+      <fa-icon [icon]="icons.team"></fa-icon>
+      <ion-label>Equipo</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button (click)="openSideBar()">
+      <fa-icon [icon]="icons.more"></fa-icon>
+      <ion-label>Más</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

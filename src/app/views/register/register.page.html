@@ -1,0 +1,37 @@
+<ion-content>
+
+  <div class="create-account">
+    <h3>CREAR CUENTA</h3>
+  </div>
+
+  <section class="logo">
+    <img width="250" src="assets/register/register.svg" />
+  </section>
+
+  <div class="form">
+    <form (submit)="signIn($event)" class="ion-padding-horizontal" #form>
+
+      <ion-item lines="none">
+        <fa-icon [icon]="icons.email" class="ion-margin-end"></fa-icon>
+        <ion-input type="email" name="email" [(ngModel)]="user.email" (keydown.enter)="signIn()" placeholder="Correo"
+          clearInput></ion-input>
+      </ion-item>
+
+      <ion-item lines="none" class="ion-margin-top">
+        <fa-icon [icon]="icons.password" class="ion-margin-end"></fa-icon>
+        <ion-input type="password" name="password" [(ngModel)]="user.password" (keydown.enter)="signIn()" placeholder="Contraseña"
+          clearInput>
+        </ion-input>
+      </ion-item>
+
+      <div class="button-register">
+        <ion-button (click)="signIn()" color="primary" mode="ios">Registrarse</ion-button>
+      </div>
+
+    </form>
+  </div>
+
+  <div class="ion-text-center ion-margin-top">
+    <a [routerLink]="['/login']"> Volver Atrás </a>
+  </div>
+</ion-content>

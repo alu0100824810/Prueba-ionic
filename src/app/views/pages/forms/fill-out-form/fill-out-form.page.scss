@@ -1,0 +1,32 @@
+.sub-header{
+
+    p:nth-child(1){
+        font-weight: bold;
+    }
+}
+
+
+.question {
+    --color: #262626;
+    position: relative;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.button-send{
+    display: flex;
+    justify-content: center;
+    
+    ion-button {
+        --background: var(--ion-color-primary);
+        color: var(--ion-color-primary-contrast );
+    }
+}
+
+
+ion-radio {
+    width: 28px;
+    height: 28px;
+}

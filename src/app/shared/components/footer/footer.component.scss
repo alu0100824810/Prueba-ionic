@@ -1,0 +1,20 @@
+
+
+ion-tab-bar {
+    --background: var(--ion-color-primary);
+    --color: var(--ion-color-primary-contrast );
+}
+
+.theme {
+    padding: 5px;
+    
+}
+
+/**
+* TODO: FIX COLOR DEL BOTON DE ATRÁS HEADER
+*/
+ion-back-button {
+    --color: var(--ion-color-primary-contrast ) !important;
+}
+
+

@@ -1,0 +1,21 @@
+<app-header [showBackButton]="false" name="Noticias">
+    <ion-buttons start (click)="openSideBar()">
+        <ion-icon name="menu-outline"></ion-icon>
+    </ion-buttons>
+</app-header>
+
+<app-sidebar-menu #menu></app-sidebar-menu>
+
+<ion-content class="ion-padding">
+    <ng-container *ngFor="let item of data">
+        <ion-card>
+            <img [src]="item.img" />
+            <ion-card-header>
+                <!--<ion-card-subtitle>Destination</ion-card-subtitle>-->
+                <!-- fecha-->
+                <ion-card-title>{{item.title}}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>{{item.subtitle}}</ion-card-content>
+        </ion-card>
+    </ng-container>
+</ion-content>

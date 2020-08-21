@@ -1,0 +1,80 @@
+<app-header [showBackButton]="true" name="Estadio"></app-header>
+
+<ion-content>
+  <div class="stadium">
+    <img src="assets/estadio/estadio-Heliodoro.png" />
+    <p>Estadio Heliodoro Rodríguez López</p>
+  </div>
+
+  <div class="info">
+    <div>
+      <h5>Inaguración</h5>
+      <p>25 de julio de 1925.</p>
+    </div>
+
+    <div>
+      <h5>Capacidad</h5>
+      <p>22.824 personas</p>
+    </div>
+
+    <div>
+      <h5>Teléfono</h5>
+      <p>922.29.81.00</p>
+    </div>
+
+    <div>
+      <h5>Cómo llegar al estadio</h5>
+      <ion-grid>
+
+        <ion-row>
+          <ion-col size="2" class="ion-text-center">
+            <fa-icon [icon]="icons.map"></fa-icon>
+          </ion-col>
+          <ion-col size="4"> Dirección
+            <p>Calle La Mutine, s/n 38005 Santa Cruz de Tenerife</p>
+          </ion-col>
+          <ion-col size="2" class="ion-text-center">
+            <fa-icon [icon]="icons.airport"></fa-icon>
+          </ion-col>
+          <ion-col size="4">  Aeropuerto
+            <p>
+              - Aeropuerto de los
+              Rodeos Tenerife Norte
+            </p>
+            <p>
+              - Aeropuerto Reina Sofía
+              Tenerife Sur
+            </p>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="2" class="ion-text-center">
+            <fa-icon [icon]="icons.bus"></fa-icon>
+          </ion-col>
+          <ion-col size="4">
+            Guagua
+            <p>Líneas 14, 26, 27, 228,
+              238, 901, 902, 903,
+              904, 908, 934, 937,
+              971 y 972 </p>
+          </ion-col>
+          <ion-col size="2" class="ion-text-center">
+            <fa-icon [icon]="icons.parking"></fa-icon>
+          </ion-col>
+          <ion-col size="4">
+            Parking
+            <p>Parking Estadio</p>
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+    </div>
+
+    <div>
+      <h5>Mapa del estadio</h5>
+      <img src="assets/estadio/mapa.png" />
+    </div>
+    
+  </div>
+</ion-content>

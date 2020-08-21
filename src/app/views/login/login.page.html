@@ -1,0 +1,43 @@
+<ion-content>
+
+  <div class="login">
+    <h3>INICIAR SESIÓN</h3>
+  </div>
+
+  <section class="logo">
+    <img src="assets/logo/logo.png" height="70%" alt="Logo del CD Tenerife" />
+  </section>
+
+  <div class="form">
+    <form (submit)="login($event)" class="ion-padding-horizontal" #form>
+
+      <ion-item lines="none">
+        <fa-icon [icon]="icons.email" class="ion-margin-end"></fa-icon>
+        <ion-input type="email" name="email" [(ngModel)]="user.email" (keydown.enter)="login()" placeholder="Correo" clearInput></ion-input>
+      </ion-item>
+
+      <ion-item lines="none" class="ion-margin-top">
+        <fa-icon [icon]="icons.password" class="ion-margin-end"></fa-icon>
+        <ion-input type="password" name="password" [(ngModel)]="user.password" (keydown.enter)="login()" placeholder="Contraseña" clearInput>
+        </ion-input>
+      </ion-item>
+
+      <div class="button-login">
+        <ion-button (click)="login()" color="primary" mode="ios">Acceder</ion-button>
+      </div>
+
+      <div class="ion-text-center ion-padding-top">
+        <p class="forget-password" [routerLink]="['/forget-password']">¿Olvidaste la contraseña?</p>
+      </div>
+
+    </form>
+  </div>
+</ion-content>
+
+<ion-footer mode="md">
+  <ion-toolbar>
+    <ion-title class="register">
+      ¿No tienes una cuenta? <a [routerLink]="['/register']">Registrarse</a>
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>
