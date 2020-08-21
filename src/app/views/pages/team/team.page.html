@@ -1,0 +1,73 @@
+<app-header [showBackButton]="false" name="Plantilla">
+  <ion-buttons start (click)="openSideBar()">
+      <ion-icon name="menu-outline"></ion-icon>
+  </ion-buttons>
+</app-header>
+
+<app-sidebar-menu #menu></app-sidebar-menu>
+
+<ion-content>
+  <ion-grid class="ion-padding">
+    
+    <p class="title">Porteros</p>
+    <ion-row>
+      <ng-container *ngFor="let item of data.porteros">
+        <ion-col size="6">
+          <ion-card class="ion-no-margin">
+            <img [src]="item.img" />
+            <ion-card-header>
+              <ion-card-subtitle>PORTERO</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content> {{item.name}}</ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ng-container>
+    </ion-row>
+
+    <p class="title">Defensas</p>
+    <ion-row>
+      <ng-container *ngFor="let item of data.defensas">
+        <ion-col size="6">
+          <ion-card class="ion-no-margin">
+            <img [src]="item.img" />
+            <ion-card-header>
+              <ion-card-subtitle>DEFENSA</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content> {{item.name}}</ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ng-container>
+    </ion-row>
+
+    <p class="title">Centrocampistas</p>
+    <ion-row>
+      <ng-container *ngFor="let item of data.centrocampistas">
+        <ion-col size="6">
+          <ion-card class="ion-no-margin">
+            <img [src]="item.img" />
+            <ion-card-header>
+              <ion-card-subtitle>CENTROCAMPISTA</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content> {{item.name}}</ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ng-container>
+    </ion-row>
+
+    <p class="title">Delanteros</p>
+    <ion-row>
+      <ng-container *ngFor="let item of data.delanteros">
+        <ion-col size="6">
+          <ion-card class="ion-no-margin">
+            <img [src]="item.img" />
+            <ion-card-header>
+              <ion-card-subtitle>Delantero</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content> {{item.name}}</ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ng-container>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>

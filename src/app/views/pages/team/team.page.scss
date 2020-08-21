@@ -1,0 +1,32 @@
+
+.title {
+    padding: 1%;
+    text-align: center;
+    color: var(--ion-color-primary);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+    
+ion-card-header {
+    padding-bottom: 5px;
+    padding-top: 10px;
+}
+
+ion-card-content{
+    padding-bottom: 10px;
+}
+
+ion-card {
+    img {
+        background: var(--ion-color-tertiary);
+    }
+}
+
+ion-card-subtitle {
+    --color: black;
+}
+
+ion-icon{
+    padding: 5px;
+    font-size: 1.6em;
+}

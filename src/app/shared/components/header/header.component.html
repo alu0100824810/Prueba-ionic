@@ -1,0 +1,23 @@
+
+<!-- ionic style -->
+  <ion-header>
+    <ion-toolbar mode="ios" class="theme">
+      <ion-buttons slot="start">
+       <ion-back-button defaultHref="/" text="" icon="chevron-back-outline" *ngIf="showBackButton; else customStartButton"></ion-back-button>
+      </ion-buttons>
+      <ion-title class="ion-text-center">{{name}}</ion-title>
+      <ion-buttons slot="end">
+        <ng-container [ngTemplateOutlet]="customEndButton"></ng-container>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+
+<!-- Slots -->
+<ng-template #customStartButton>
+  <ng-content select="[start]"></ng-content>
+</ng-template>
+
+<ng-template #customEndButton>
+  <ng-content select="[end]"></ng-content>
+</ng-template>

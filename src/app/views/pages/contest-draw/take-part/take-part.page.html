@@ -1,0 +1,25 @@
+<app-header [showBackButton]="false" name="Concursos-sorteos">
+  <ion-buttons start>
+    <ion-back-button defaultHref="/contest-draw" text="" icon="chevron-back-outline"></ion-back-button>
+  </ion-buttons>
+</app-header>
+
+<ion-content>
+  <ng-container *ngIf="data != null">
+    <ion-card>
+      <img [src]="data.img" />-
+      <ion-card-header>
+        <ion-card-title>{{data.title}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content> {{data.info }}</ion-card-content>
+    </ion-card>
+    <br>
+
+    <div class="take-part">
+      <ng-container [ngSwitch]="participated">
+        <ion-button *ngSwitchCase="true" expand="block" shape="round" disabled="true">Ya has participado</ion-button>
+        <ion-button *ngSwitchCase="false" (click)="takePartDraw()" expand="block" shape="round">PARTICIPAR</ion-button>
+      </ng-container>
+    </div>
+  </ng-container>
+</ion-content>

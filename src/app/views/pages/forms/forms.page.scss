@@ -1,0 +1,17 @@
+fa-icon {
+    font-size: 3.5em;
+    color: var(--ion-color-primary);
+}
+
+ion-card {
+    padding: 15px 5px;
+    text-align: center;
+    
+    ion-card-title {
+        font-size: 4vw;
+    }
+
+    ion-card-header{
+        padding: 16px 5px;
+    }
+}

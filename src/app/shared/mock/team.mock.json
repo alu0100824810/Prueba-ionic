@@ -1,0 +1,124 @@
+[
+    {
+        "porteros": [
+            {
+                "name": "A. Ortolá",
+                "img": "https://assets.laliga.com/squad/2019/t612/p94220/512x512/p94220_t612_2019_1_003_000.png",
+                "personal": {
+                    "name": "Adrián Ortolá Vañó"
+                }
+            },
+            {
+                "name": "Dani H",
+                "img": "https://assets.laliga.com/squad/2019/t612/p76559/512x512/p76559_t612_2019_1_003_000.png",
+                "personal": {
+                    "name": "Daniel Hernández Santos"
+                }
+            },
+            {
+                "name": "Otaño",
+                "img": "https://assets.laliga.com/squad/2019/t612/p245780/512x512/p245780_t612_2019_1_003_000.png",
+                "personal": {
+                    "name": "Ignacio Otaño"
+                }
+            }
+        ],
+        "defensas": [
+            {
+                "name": "L. Pérez",
+                "img": "https://assets.laliga.com/squad/2019/t612/p230029/512x512/p230029_t612_2019_1_003_000.png",
+                "personal": {
+                    "name": "L. Pérez"
+                }
+            },
+            {
+                "name": "Alex Muñoz",
+                "img": "https://assets.laliga.com/squad/2019/t612/p133020/512x512/p133020_t612_2019_1_003_000.png",
+                "personal": {
+                    "name": "Alex Muñoz"
+                }
+            },
+            {
+                "name": "Alberto",
+                "img": "https://assets.laliga.com/squad/2019/t612/p168579/512x512/p168579_t612_2019_1_003_000.png",
+                "personal": {
+                    "name": "Ignacio Otaño"
+                }
+            },
+            {
+                "name": "Carlos Ruiz",
+                "img": "https://assets.laliga.com/squad/2019/t612/p89681/512x512/p89681_t612_2019_1_003_000.png",
+                "personal": {
+                    "name": "Carlos Ruiz"
+                }
+            },
+            {
+                "name": "Lluís Lopez",
+                "img": "https://assets.laliga.com/squad/2019/t612/p215686/512x512/p215686_t612_2019_1_003_000.png",
+                "personal": {
+                    "name": "Lluís Lopez"
+                }
+            }
+        ],
+        "centrocampistas": [
+            {
+                "name": "Undabarrena",
+                "img": "https://assets.laliga.com/squad/2019/t612/p146937/512x512/p146937_t612_2019_1_003_000.png",
+                "personal": {
+                    "name": "Undabarrena"
+                }
+            },
+            {
+                "name": "L. Milla",
+                "img": "https://assets.laliga.com/squad/2019/t612/p167742/512x512/p167742_t612_2019_1_003_000.png",
+                "personal": {
+                    "name": "L. Milla"
+                }
+            },
+            {
+                "name": "Javi Muñoz",
+                "img": "https://assets.laliga.com/squad/2019/t612/p198221/512x512/p198221_t612_2019_1_003_000.png",
+                "personal": {
+                    "name": "Javi Muñoz"
+                }
+            },
+            {
+                "name": "Bermejo",
+                "img": "https://assets.laliga.com/squad/2019/t612/p486214/512x512/p486214_t612_2019_1_003_000.png",
+                "personal": {
+                    "name": "Bermejo"
+                }
+            }
+        ],
+        "delanteros": [
+            {
+                "name": "Suso N. T.",
+                "img": "https://assets.laliga.com/squad/2019/t612/p66339/512x512/p66339_t612_2019_1_003_000.png",
+                "personal": {
+                    "name": "Suso N. T."
+                }
+            },
+            {
+                "name": "Dani Gómez",
+                "img": "https://assets.laliga.com/squad/2019/t612/p223770/512x512/p223770_t612_2019_1_003_000.png",
+                "personal": {
+                    "name": "Dani Gómez"
+                }
+            },
+            {
+                "name": "Nahuel",
+                "img": "https://assets.laliga.com/squad/2019/t612/p178063/512x512/p178063_t612_2019_1_003_000.png",
+                "personal": {
+                    "name": "Nahuel"
+                }
+            },
+            {
+                "name": "Borja Lasso",
+                "img": "https://assets.laliga.com/squad/2019/t612/p207272/512x512/p207272_t612_2019_1_003_000.png",
+                "personal": {
+                    "name": "Borja Lasso"
+                }
+            }
+        ]
+    }
+]

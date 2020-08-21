@@ -1,0 +1,27 @@
+<app-header [showBackButton]="false" name="Encuestas">
+  <ion-buttons start>
+    <ion-back-button defaultHref="/home" text="" icon="chevron-back-outline"></ion-back-button>
+  </ion-buttons>
+</app-header>
+
+<ion-content>
+  <div class="ion-padding-top ion-text-center">
+    <h4>Seleccionar categoria</h4>
+  </div>
+
+  <ion-grid>
+    <ng-container *ngFor="let item of data; let i=index;">
+      <ion-row>
+        <ion-col size="6" *ngFor="let item of item.grupo">
+          <ion-card [routerLink]="item.route" mode="md">
+            <ion-card-header>
+              <fa-icon [icon]="item.icon"></fa-icon>
+              <ion-card-title>{{item.title}}</ion-card-title>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ng-container>
+  </ion-grid>
+
+</ion-content>

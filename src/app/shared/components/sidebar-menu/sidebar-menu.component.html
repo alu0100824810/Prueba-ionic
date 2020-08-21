@@ -1,0 +1,71 @@
+<ion-menu side="start" menuId="first" contentId="main">
+  <ion-header>
+    <ion-item class="header" lines="none">
+      <ion-avatar slot="start">
+        <img src="assets/default_avatar.png" onerror="this.src='assets/default_avatar.png'" />
+      </ion-avatar>
+      <ion-label>
+        <h2>Usuario</h2>
+        <p>{{this.loginService.user.email}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-header>
+
+  <ion-content>
+    <ion-list lines="full" class="ion-no-padding">
+
+      <ion-item lines="none" (click)="closeMenu('stadium')">
+        <img class="stadium" src="assets/stadium.png" width="24px" />
+        <ion-label>Estadio</ion-label>
+      </ion-item>
+
+      <ion-item (click)="closeMenu()">
+        <fa-icon [icon]="icons.club"></fa-icon>
+        <ion-label>Club</ion-label>
+      </ion-item>
+
+      <ion-item lines="none" (click)="closeMenu()">
+        <fa-icon [icon]="icons.tickets"></fa-icon>
+        <ion-label>Entradas</ion-label>
+      </ion-item>
+      <ion-item lines="none" (click)="closeMenu()">
+        <fa-icon [icon]="icons.shop"></fa-icon>
+        <ion-label>Tienda</ion-label>
+      </ion-item>
+      <ion-item lines="none" (click)="closeMenu()">
+        <fa-icon [icon]="icons.offers"></fa-icon>
+        <ion-label>Ofertas</ion-label>
+      </ion-item>
+      <ion-item (click)="closeMenu()">
+        <fa-icon [icon]="icons.food"></fa-icon>
+        <ion-label>Comida</ion-label>
+      </ion-item>
+
+      <ion-item lines="none" (click)="closeMenu('contest-draw')">
+        <fa-icon [icon]="icons.award"></fa-icon>
+        <ion-label>Concursos y sorteos</ion-label>
+      </ion-item>
+      <ion-item lines="none" (click)="closeMenu('category-forms')">
+        <fa-icon [icon]="icons.quiz"></fa-icon>
+        <ion-label>Encuestas y opiniones</ion-label>
+      </ion-item>
+
+    </ion-list>
+  </ion-content>
+
+  <ion-footer>
+    <ion-list lines="none">
+      <ion-item (click)="closeMenu()">
+        <fa-icon [icon]="icons.settings"></fa-icon>
+        <ion-label>Configuración</ion-label>
+      </ion-item>
+      <ion-item (click)="logOut()">
+        <fa-icon [icon]="icons.exit"></fa-icon>
+        <ion-label>Cerrar sesión</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-footer>
+
+</ion-menu>
+
+<ion-router-outlet id="main"></ion-router-outlet>

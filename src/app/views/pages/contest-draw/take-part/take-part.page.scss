@@ -1,0 +1,8 @@
+.take-part {
+    display: flex;
+    justify-content: center;
+
+    ion-button {
+        --background: var(--ion-color-secondary);
+    }
+}

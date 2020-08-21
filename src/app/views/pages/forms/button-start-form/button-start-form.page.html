@@ -1,0 +1,13 @@
+<app-header class="ion-text-capitalize" [showBackButton]="false" name="Categoria {{infoService.category}}">
+  <ion-buttons start>
+    <ion-back-button defaultHref="/category-forms" text="" icon="chevron-back-outline"></ion-back-button>
+  </ion-buttons>
+</app-header>
+
+<ion-content>
+  <div class="button-start" *ngIf="!infoService.done">
+    <ion-button expand="block" fill="outline" shape="round" size="large" [routerLink]="['./fill-out']">
+      Empezar encuesta
+    </ion-button>
+  </div>
+</ion-content>
