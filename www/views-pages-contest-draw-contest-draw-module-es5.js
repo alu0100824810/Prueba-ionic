@@ -22,7 +22,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<app-header [showBackButton]=\"false\" name=\"Concursos-sorteos\">\n    <ion-buttons start>\n        <ion-back-button defaultHref=\"/home\" text=\"\" icon=\"chevron-back-outline\"></ion-back-button>\n    </ion-buttons>\n</app-header>\n\n<ion-content class=\"ion-padding\">\n    <ng-container *ngFor=\"let item of data\">\n        <ion-card [routerLink]=\"['./take-part/' + item.id]\">\n            <img [src]=\"item.img\" />\n            <ion-card-header>\n                <ion-card-title>{{item.title}}</ion-card-title>\n            </ion-card-header>\n        </ion-card>\n        <br>\n    </ng-container>\n</ion-content>";
+      __webpack_exports__["default"] = "<app-header [showBackButton]=\"false\" name=\"Concursos-sorteos\">\n    <ion-buttons start>\n        <ion-back-button defaultHref=\"/home\" text=\"\" icon=\"chevron-back-outline\"></ion-back-button>\n    </ion-buttons>\n</app-header>\n\n<ion-content class=\"ion-padding\">\n\n    <ng-container *ngIf=\"data.length == 0\">\n        <div class=\"not-available\">\n            <p>No hay concursos ni sorteos disponibles.</p>\n        </div>\n    </ng-container>\n\n    <ng-container *ngIf=\"data.length !== 0\">\n        <ng-container *ngFor=\"let item of data\">\n            <ion-card [routerLink]=\"['./take-part/' + item.id]\">\n                <img [src]=\"item.img\" />\n                <ion-card-header>\n                    <ion-card-title>{{item.title}}</ion-card-title>\n                </ion-card-header>\n            </ion-card>\n            <br>\n        </ng-container>\n    </ng-container>\n\n</ion-content>";
       /***/
     },
 
@@ -114,7 +114,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "ion-card-header {\n  --background: var(--ion-color-secondary);\n  padding: 15px;\n}\n\nion-card-title {\n  color: var(--ion-color-secondary-contrast);\n  font-size: 22px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdmlld3MvcGFnZXMvY29udGVzdC1kcmF3L2NvbnRlc3QtZHJhdy5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBR0E7RUFDSSx3Q0FBQTtFQUNBLGFBQUE7QUFGSjs7QUFJQTtFQUNJLDBDQUFBO0VBQ0EsZUFBQTtBQURKIiwiZmlsZSI6InNyYy9hcHAvdmlld3MvcGFnZXMvY29udGVzdC1kcmF3L2NvbnRlc3QtZHJhdy5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJcblxuXG5pb24tY2FyZC1oZWFkZXIge1xuICAgIC0tYmFja2dyb3VuZDogdmFyKC0taW9uLWNvbG9yLXNlY29uZGFyeSk7XG4gICAgcGFkZGluZzogMTVweDtcbn1cbmlvbi1jYXJkLXRpdGxlIHtcbiAgICBjb2xvcjogdmFyKC0taW9uLWNvbG9yLXNlY29uZGFyeS1jb250cmFzdCk7XG4gICAgZm9udC1zaXplOiAyMnB4O1xufSJdfQ== */";
+      __webpack_exports__["default"] = ".not-available {\n  display: flex;\n  justify-content: center;\n  height: 100%;\n  align-items: center;\n}\n\nion-card-header {\n  --background: var(--ion-color-secondary);\n  padding: 15px;\n}\n\nion-card-title {\n  color: var(--ion-color-secondary-contrast);\n  font-size: 22px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdmlld3MvcGFnZXMvY29udGVzdC1kcmF3L2NvbnRlc3QtZHJhdy5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRUE7RUFDSSxhQUFBO0VBQ0EsdUJBQUE7RUFDQSxZQUFBO0VBQ0EsbUJBQUE7QUFESjs7QUFJQTtFQUNJLHdDQUFBO0VBQ0EsYUFBQTtBQURKOztBQUdBO0VBQ0ksMENBQUE7RUFDQSxlQUFBO0FBQUoiLCJmaWxlIjoic3JjL2FwcC92aWV3cy9wYWdlcy9jb250ZXN0LWRyYXcvY29udGVzdC1kcmF3LnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIlxuXG4ubm90LWF2YWlsYWJsZXtcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgIGhlaWdodDogMTAwJTtcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xufVxuXG5pb24tY2FyZC1oZWFkZXIge1xuICAgIC0tYmFja2dyb3VuZDogdmFyKC0taW9uLWNvbG9yLXNlY29uZGFyeSk7XG4gICAgcGFkZGluZzogMTVweDtcbn1cbmlvbi1jYXJkLXRpdGxlIHtcbiAgICBjb2xvcjogdmFyKC0taW9uLWNvbG9yLXNlY29uZGFyeS1jb250cmFzdCk7XG4gICAgZm9udC1zaXplOiAyMnB4O1xufSJdfQ== */";
       /***/
     },
 
@@ -161,6 +161,12 @@
       var _core_services_messages_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @core/services/messages.service */
       "./src/app/core/services/messages.service.ts");
+      /* harmony import */
+
+
+      var app_shared_utils_functionsUtils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! app/shared/utils/functionsUtils */
+      "./src/app/shared/utils/functionsUtils.ts");
 
       var ContestDrawPage = /*#__PURE__*/function () {
         function ContestDrawPage(firebaseAppService, messages) {
@@ -169,67 +175,81 @@
           this.firebaseAppService = firebaseAppService;
           this.messages = messages;
           this.data = [];
+          this.getData();
         }
 
         _createClass(ContestDrawPage, [{
           key: "ngOnInit",
-          value: function ngOnInit() {
-            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+          value: function ngOnInit() {}
+        }, {
+          key: "getData",
+          value: function getData() {
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
               var _this = this;
 
-              var MyDate, res;
-              return regeneratorRuntime.wrap(function _callee$(_context) {
+              return regeneratorRuntime.wrap(function _callee2$(_context2) {
                 while (1) {
-                  switch (_context.prev = _context.next) {
+                  switch (_context2.prev = _context2.next) {
                     case 0:
-                      _context.prev = 0;
-                      _context.next = 3;
+                      _context2.prev = 0;
+                      _context2.next = 3;
                       return this.messages.showSpinner('Cargando...');
 
                     case 3:
-                      MyDate = new Date();
-                      this.date = ('0' + MyDate.getDate()).slice(-2) + '-' + ('0' + (MyDate.getMonth() + 1)).slice(-2) + '-' + MyDate.getFullYear();
-                      _context.next = 7;
-                      return this.firebaseAppService.getAllDraw('27-07-2020');
+                      _context2.next = 5;
+                      return this.firebaseAppService.getAllDrawFilterByUser(Object(app_shared_utils_functionsUtils__WEBPACK_IMPORTED_MODULE_4__["generateDateNow"])()).then(function (resul) {
+                        resul.subscribe(function (dat) {
+                          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+                            var _this2 = this;
 
-                    case 7:
-                      res = _context.sent;
-                      // TODO: FECHA DE PRUEBA
-                      this.result = res.subscribe(function (d) {
-                        d.forEach(function (item) {
-                          _this.data.push(item.payload.doc.data());
+                            return regeneratorRuntime.wrap(function _callee$(_context) {
+                              while (1) {
+                                switch (_context.prev = _context.next) {
+                                  case 0:
+                                    _context.next = 2;
+                                    return dat.forEach(function (item) {
+                                      _this2.data.push(item.payload.doc.data());
+                                    });
+
+                                  case 2:
+                                  case "end":
+                                    return _context.stop();
+                                }
+                              }
+                            }, _callee);
+                          }));
                         });
                       });
-                      _context.next = 16;
+
+                    case 5:
+                      _context2.next = 12;
                       break;
 
-                    case 11:
-                      _context.prev = 11;
-                      _context.t0 = _context["catch"](0);
-                      console.error(_context.t0);
-                      _context.next = 16;
+                    case 7:
+                      _context2.prev = 7;
+                      _context2.t0 = _context2["catch"](0);
+                      console.error(_context2.t0);
+                      _context2.next = 12;
                       return this.messages.hideSpinner();
+
+                    case 12:
+                      _context2.prev = 12;
+                      _context2.next = 15;
+                      return this.messages.hideSpinner();
+
+                    case 15:
+                      return _context2.finish(12);
 
                     case 16:
-                      _context.prev = 16;
-                      _context.next = 19;
-                      return this.messages.hideSpinner();
+                      console.log(this.data);
 
-                    case 19:
-                      return _context.finish(16);
-
-                    case 20:
+                    case 17:
                     case "end":
-                      return _context.stop();
+                      return _context2.stop();
                   }
                 }
-              }, _callee, this, [[0, 11, 16, 20]]);
+              }, _callee2, this, [[0, 7, 12, 16]]);
             }));
-          }
-        }, {
-          key: "ngOnDestroy",
-          value: function ngOnDestroy() {
-            this.result.unsubscribe();
           }
         }]);
 

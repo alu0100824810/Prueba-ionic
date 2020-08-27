@@ -15,7 +15,6 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { IBeacon } from '@ionic-native/ibeacon/ngx'; // ! BEACON
-import { Diagnostic } from '@ionic-native/diagnostic/ngx';
 
 
 @NgModule({
@@ -36,7 +35,6 @@ import { Diagnostic } from '@ionic-native/diagnostic/ngx';
   providers: [
    // HTTP,  // TODO: QUITAR
     IBeacon,
-    Diagnostic,
     AngularFirestoreModule,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
   ],

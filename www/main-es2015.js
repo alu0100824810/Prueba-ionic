@@ -295,39 +295,39 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     { path: '', redirectTo: 'welcome', pathMatch: 'full' },
     { path: 'welcome', loadChildren: () => __webpack_require__.e(/*! import() | views-welcome-welcome-module */ "views-welcome-welcome-module").then(__webpack_require__.bind(null, /*! ./views/welcome/welcome.module */ "./src/app/views/welcome/welcome.module.ts")).then(m => m.WelcomePageModule), canActivate: [_core_guards_welcome_info_guard__WEBPACK_IMPORTED_MODULE_3__["WelcomeInfoGuard"]] },
-    { path: 'login', loadChildren: () => Promise.all(/*! import() | views-login-login-module */[__webpack_require__.e("default~views-forget-password-forget-password-module~views-home-home-module~views-login-login-module~e88951d3"), __webpack_require__.e("views-login-login-module")]).then(__webpack_require__.bind(null, /*! ./views/login/login.module */ "./src/app/views/login/login.module.ts")).then(m => m.LoginPageModule) },
-    { path: 'forget-password', loadChildren: () => Promise.all(/*! import() | views-forget-password-forget-password-module */[__webpack_require__.e("default~views-forget-password-forget-password-module~views-home-home-module~views-login-login-module~e88951d3"), __webpack_require__.e("views-forget-password-forget-password-module")]).then(__webpack_require__.bind(null, /*! ./views/forget-password/forget-password.module */ "./src/app/views/forget-password/forget-password.module.ts")).then(m => m.ForgetPasswordPageModule) },
-    { path: 'register', loadChildren: () => Promise.all(/*! import() | views-register-register-module */[__webpack_require__.e("default~views-forget-password-forget-password-module~views-home-home-module~views-login-login-module~e88951d3"), __webpack_require__.e("views-register-register-module")]).then(__webpack_require__.bind(null, /*! ./views/register/register.module */ "./src/app/views/register/register.module.ts")).then(m => m.RegisterPageModule) },
+    { path: 'login', loadChildren: () => Promise.all(/*! import() | views-login-login-module */[__webpack_require__.e("default~views-forget-password-forget-password-module~views-home-home-module~views-login-login-module~bd78df07"), __webpack_require__.e("views-login-login-module")]).then(__webpack_require__.bind(null, /*! ./views/login/login.module */ "./src/app/views/login/login.module.ts")).then(m => m.LoginPageModule) },
+    { path: 'forget-password', loadChildren: () => Promise.all(/*! import() | views-forget-password-forget-password-module */[__webpack_require__.e("default~views-forget-password-forget-password-module~views-home-home-module~views-login-login-module~bd78df07"), __webpack_require__.e("views-forget-password-forget-password-module")]).then(__webpack_require__.bind(null, /*! ./views/forget-password/forget-password.module */ "./src/app/views/forget-password/forget-password.module.ts")).then(m => m.ForgetPasswordPageModule) },
+    { path: 'register', loadChildren: () => Promise.all(/*! import() | views-register-register-module */[__webpack_require__.e("default~views-forget-password-forget-password-module~views-home-home-module~views-login-login-module~bd78df07"), __webpack_require__.e("views-register-register-module")]).then(__webpack_require__.bind(null, /*! ./views/register/register.module */ "./src/app/views/register/register.module.ts")).then(m => m.RegisterPageModule) },
     {
         path: 'home',
         children: [
             {
                 path: '',
-                loadChildren: () => Promise.all(/*! import() | views-home-home-module */[__webpack_require__.e("default~views-forget-password-forget-password-module~views-home-home-module~views-login-login-module~e88951d3"), __webpack_require__.e("views-home-home-module")]).then(__webpack_require__.bind(null, /*! ./views/home/home.module */ "./src/app/views/home/home.module.ts")).then(m => m.HomePageModule)
+                loadChildren: () => Promise.all(/*! import() | views-home-home-module */[__webpack_require__.e("default~views-forget-password-forget-password-module~views-home-home-module~views-login-login-module~bd78df07"), __webpack_require__.e("default~views-home-home-module~views-pages-contest-draw-contest-draw-module~views-pages-contest-draw~a4713b3c"), __webpack_require__.e("views-home-home-module")]).then(__webpack_require__.bind(null, /*! ./views/home/home.module */ "./src/app/views/home/home.module.ts")).then(m => m.HomePageModule)
             }
         ]
     },
     {
         path: 'stadium',
-        loadChildren: () => Promise.all(/*! import() | views-pages-stadium-stadium-module */[__webpack_require__.e("default~views-forget-password-forget-password-module~views-home-home-module~views-login-login-module~e88951d3"), __webpack_require__.e("views-pages-stadium-stadium-module")]).then(__webpack_require__.bind(null, /*! ./views/pages/stadium/stadium.module */ "./src/app/views/pages/stadium/stadium.module.ts")).then(m => m.StadiumPageModule)
+        loadChildren: () => Promise.all(/*! import() | views-pages-stadium-stadium-module */[__webpack_require__.e("default~views-forget-password-forget-password-module~views-home-home-module~views-login-login-module~bd78df07"), __webpack_require__.e("views-pages-stadium-stadium-module")]).then(__webpack_require__.bind(null, /*! ./views/pages/stadium/stadium.module */ "./src/app/views/pages/stadium/stadium.module.ts")).then(m => m.StadiumPageModule)
     },
     {
         path: 'category-forms',
         children: [
             {
                 path: '',
-                loadChildren: () => Promise.all(/*! import() | views-pages-forms-forms-module */[__webpack_require__.e("default~views-forget-password-forget-password-module~views-home-home-module~views-login-login-module~e88951d3"), __webpack_require__.e("views-pages-forms-forms-module")]).then(__webpack_require__.bind(null, /*! ./views/pages/forms/forms.module */ "./src/app/views/pages/forms/forms.module.ts")).then(m => m.FormsPageModule)
+                loadChildren: () => Promise.all(/*! import() | views-pages-forms-forms-module */[__webpack_require__.e("default~views-forget-password-forget-password-module~views-home-home-module~views-login-login-module~bd78df07"), __webpack_require__.e("views-pages-forms-forms-module")]).then(__webpack_require__.bind(null, /*! ./views/pages/forms/forms.module */ "./src/app/views/pages/forms/forms.module.ts")).then(m => m.FormsPageModule)
             },
             {
                 path: 'category/:category',
                 children: [
                     {
                         path: '',
-                        loadChildren: () => Promise.all(/*! import() | views-pages-forms-button-start-form-button-start-form-module */[__webpack_require__.e("default~views-forget-password-forget-password-module~views-home-home-module~views-login-login-module~e88951d3"), __webpack_require__.e("common"), __webpack_require__.e("views-pages-forms-button-start-form-button-start-form-module")]).then(__webpack_require__.bind(null, /*! ./views/pages/forms/button-start-form/button-start-form.module */ "./src/app/views/pages/forms/button-start-form/button-start-form.module.ts")).then(m => m.ButtonStartFormPageModule)
+                        loadChildren: () => Promise.all(/*! import() | views-pages-forms-button-start-form-button-start-form-module */[__webpack_require__.e("default~views-forget-password-forget-password-module~views-home-home-module~views-login-login-module~bd78df07"), __webpack_require__.e("default~views-home-home-module~views-pages-contest-draw-contest-draw-module~views-pages-contest-draw~a4713b3c"), __webpack_require__.e("views-pages-forms-button-start-form-button-start-form-module")]).then(__webpack_require__.bind(null, /*! ./views/pages/forms/button-start-form/button-start-form.module */ "./src/app/views/pages/forms/button-start-form/button-start-form.module.ts")).then(m => m.ButtonStartFormPageModule)
                     },
                     {
                         path: 'fill-out',
-                        loadChildren: () => Promise.all(/*! import() | views-pages-forms-fill-out-form-fill-out-form-module */[__webpack_require__.e("default~views-forget-password-forget-password-module~views-home-home-module~views-login-login-module~e88951d3"), __webpack_require__.e("common"), __webpack_require__.e("views-pages-forms-fill-out-form-fill-out-form-module")]).then(__webpack_require__.bind(null, /*! ./views/pages/forms/fill-out-form/fill-out-form.module */ "./src/app/views/pages/forms/fill-out-form/fill-out-form.module.ts")).then(m => m.FillOutFormPageModule)
+                        loadChildren: () => Promise.all(/*! import() | views-pages-forms-fill-out-form-fill-out-form-module */[__webpack_require__.e("default~views-forget-password-forget-password-module~views-home-home-module~views-login-login-module~bd78df07"), __webpack_require__.e("default~views-home-home-module~views-pages-contest-draw-contest-draw-module~views-pages-contest-draw~a4713b3c"), __webpack_require__.e("views-pages-forms-fill-out-form-fill-out-form-module")]).then(__webpack_require__.bind(null, /*! ./views/pages/forms/fill-out-form/fill-out-form.module */ "./src/app/views/pages/forms/fill-out-form/fill-out-form.module.ts")).then(m => m.FillOutFormPageModule)
                     },
                 ]
             }
@@ -338,13 +338,25 @@ const routes = [
         children: [
             {
                 path: '',
-                loadChildren: () => Promise.all(/*! import() | views-pages-contest-draw-contest-draw-module */[__webpack_require__.e("default~views-forget-password-forget-password-module~views-home-home-module~views-login-login-module~e88951d3"), __webpack_require__.e("common"), __webpack_require__.e("views-pages-contest-draw-contest-draw-module")]).then(__webpack_require__.bind(null, /*! ./views/pages/contest-draw/contest-draw.module */ "./src/app/views/pages/contest-draw/contest-draw.module.ts")).then(m => m.ContestDrawPageModule),
+                loadChildren: () => Promise.all(/*! import() | views-pages-contest-draw-contest-draw-module */[__webpack_require__.e("default~views-forget-password-forget-password-module~views-home-home-module~views-login-login-module~bd78df07"), __webpack_require__.e("default~views-home-home-module~views-pages-contest-draw-contest-draw-module~views-pages-contest-draw~a4713b3c"), __webpack_require__.e("views-pages-contest-draw-contest-draw-module")]).then(__webpack_require__.bind(null, /*! ./views/pages/contest-draw/contest-draw.module */ "./src/app/views/pages/contest-draw/contest-draw.module.ts")).then(m => m.ContestDrawPageModule),
             },
             {
                 path: 'take-part/:id',
-                loadChildren: () => Promise.all(/*! import() | views-pages-contest-draw-take-part-take-part-module */[__webpack_require__.e("default~views-forget-password-forget-password-module~views-home-home-module~views-login-login-module~e88951d3"), __webpack_require__.e("common"), __webpack_require__.e("views-pages-contest-draw-take-part-take-part-module")]).then(__webpack_require__.bind(null, /*! ./views/pages/contest-draw/take-part/take-part.module */ "./src/app/views/pages/contest-draw/take-part/take-part.module.ts")).then(m => m.TakePartPageModule)
+                loadChildren: () => Promise.all(/*! import() | views-pages-contest-draw-take-part-take-part-module */[__webpack_require__.e("default~views-forget-password-forget-password-module~views-home-home-module~views-login-login-module~bd78df07"), __webpack_require__.e("default~views-home-home-module~views-pages-contest-draw-contest-draw-module~views-pages-contest-draw~a4713b3c"), __webpack_require__.e("views-pages-contest-draw-take-part-take-part-module")]).then(__webpack_require__.bind(null, /*! ./views/pages/contest-draw/take-part/take-part.module */ "./src/app/views/pages/contest-draw/take-part/take-part.module.ts")).then(m => m.TakePartPageModule)
             }
         ]
+    },
+    {
+        path: 'food',
+        loadChildren: () => Promise.all(/*! import() | views-pages-food-food-module */[__webpack_require__.e("default~views-forget-password-forget-password-module~views-home-home-module~views-login-login-module~bd78df07"), __webpack_require__.e("default~views-home-home-module~views-pages-contest-draw-contest-draw-module~views-pages-contest-draw~a4713b3c"), __webpack_require__.e("views-pages-food-food-module")]).then(__webpack_require__.bind(null, /*! ./views/pages/food/food.module */ "./src/app/views/pages/food/food.module.ts")).then(m => m.FoodPageModule)
+    },
+    {
+        path: 'offers-shop-tickets',
+        loadChildren: () => Promise.all(/*! import() | views-pages-offers-shop-tickets-offers-shop-tickets-module */[__webpack_require__.e("default~views-forget-password-forget-password-module~views-home-home-module~views-login-login-module~bd78df07"), __webpack_require__.e("default~views-home-home-module~views-pages-contest-draw-contest-draw-module~views-pages-contest-draw~a4713b3c"), __webpack_require__.e("views-pages-offers-shop-tickets-offers-shop-tickets-module")]).then(__webpack_require__.bind(null, /*! ./views/pages/offers-shop-tickets/offers-shop-tickets.module */ "./src/app/views/pages/offers-shop-tickets/offers-shop-tickets.module.ts")).then(m => m.OffersShopTicketsPageModule)
+    },
+    {
+        path: 'polls',
+        loadChildren: () => Promise.all(/*! import() | views-pages-polls-polls-module */[__webpack_require__.e("default~views-forget-password-forget-password-module~views-home-home-module~views-login-login-module~bd78df07"), __webpack_require__.e("views-pages-polls-polls-module")]).then(__webpack_require__.bind(null, /*! ./views/pages/polls/polls.module */ "./src/app/views/pages/polls/polls.module.ts")).then(m => m.PollsPageModule)
     },
 ];
 let AppRoutingModule = class AppRoutingModule {
@@ -491,7 +503,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/__ivy_ngcc__/fesm2015/angular-fire-firestore.js");
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/__ivy_ngcc__/fesm2015/animations.js");
 /* harmony import */ var _ionic_native_ibeacon_ngx__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @ionic-native/ibeacon/ngx */ "./node_modules/@ionic-native/ibeacon/__ivy_ngcc__/ngx/index.js");
-/* harmony import */ var _ionic_native_diagnostic_ngx__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @ionic-native/diagnostic/ngx */ "./node_modules/@ionic-native/diagnostic/__ivy_ngcc__/ngx/index.js");
 
  // TODO: REVISAR
 
@@ -509,7 +520,6 @@ __webpack_require__.r(__webpack_exports__);
 // import { HTTP } from '@ionic-native/http/ngx';  // TODO: QUITAR
 
  // ! BEACON
-
 let AppModule = class AppModule {
 };
 AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
@@ -531,7 +541,6 @@ AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         providers: [
             // HTTP,  // TODO: QUITAR
             _ionic_native_ibeacon_ngx__WEBPACK_IMPORTED_MODULE_15__["IBeacon"],
-            _ionic_native_diagnostic_ngx__WEBPACK_IMPORTED_MODULE_16__["Diagnostic"],
             _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_13__["AngularFirestoreModule"],
             { provide: _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["IonicRouteStrategy"] },
         ],

@@ -3,8 +3,8 @@ import { ContestDraw, Participating } from 'app/shared/models/Contest-Draw.Model
 import { ActivatedRoute } from '@angular/router';
 import { FirebaseAppService } from '@core/services/firebase-app.service';
 import { MessagesService } from '@core/services/messages.service';
-import { LoginService } from '@core/services/login.service';
 import { AlertController, NavController } from '@ionic/angular';
+import { generateDateNow } from 'app/shared/utils/functionsUtils';
 
 @Component({
   selector: 'app-take-part',
@@ -14,7 +14,6 @@ import { AlertController, NavController } from '@ionic/angular';
 export class TakePartPage implements OnInit, OnDestroy {
 
   data: ContestDraw = null;
-  date;
   result: any; // TODO: CAMBIAR NOMBRE
   checking: any; // TODO: CAMBIAR NOMBRE
   participated = false;
@@ -29,7 +28,6 @@ export class TakePartPage implements OnInit, OnDestroy {
     private readonly activatedRoute: ActivatedRoute,
     private firebaseAppService: FirebaseAppService,
     private messages: MessagesService,
-    private loginService: LoginService,
     public alertController: AlertController,
     private navCtrl: NavController) {
     this.getInfo();
@@ -43,22 +41,10 @@ export class TakePartPage implements OnInit, OnDestroy {
   async getInfo() {
     try {
       await this.messages.showSpinner();
-      const MyDate = new Date();
-      this.date = ('0' + MyDate.getDate()).slice(-2) + '-' + ('0' + (MyDate.getMonth() + 1)).slice(-2) + '-' + MyDate.getFullYear();
-      const res = await this.firebaseAppService.getDataUniqueDraw('27-07-2020', this.activatedRoute.snapshot.params.id);  // ! OJO: FECHA DE PRUEBA
-      const r = await this.firebaseAppService.checkUserHasParticipated('27-07-2020', this.activatedRoute.snapshot.params.id);
-      this.checking = await r.subscribe(async (datos: any) => { // ! OJO: CON EL SUBCRIBE- DESUCRBIBE
-
-        await datos.forEach(item => {
-          const check = item.payload.doc.data();
-          if (check.uid && check.uid === this.loginService.user.uid) {
-            this.participated = true;
-          }
-        });
-
-      });
-      this.result = await res.subscribe(async (d: any) => { // ! OJO: CON EL SUBCRIBE- DESUCRBIBE
+      const res = await this.firebaseAppService.getDataUniqueDraw(generateDateNow(), this.activatedRoute.snapshot.params.id);
+      this.result = await res.subscribe(async (d: any) => {
         this.data = await d.payload.data();
+        this.participated = this.data.participated ? this.data.participated : false;
       });
     } catch (error) {
       console.error(error);
@@ -85,9 +71,9 @@ export class TakePartPage implements OnInit, OnDestroy {
           handler: async () => {
             try {
               await this.messages.showSpinner('Cargando...');
-              this.user.email = this.loginService.user.email;
-              this.user.uid = this.loginService.user.uid;
-              await this.firebaseAppService.takePartOnlyDraw('27-07-2020', this.activatedRoute.snapshot.params.id, this.user);  // ! OJO: FECHA DE PRUEBA
+              this.data.participated = true;
+              await this.firebaseAppService.updateParticiped(generateDateNow(), this.activatedRoute.snapshot.params.id, this.data);
+              await this.firebaseAppService.takePartOnlyDraw(generateDateNow(), this.activatedRoute.snapshot.params.id);
               await this.messages.showToast('Su participación se ha realizado con éxito');
               this.navCtrl.back();
             } catch (error) {
@@ -105,7 +91,7 @@ export class TakePartPage implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.result.unsubscribe();
-    this.checking.unsubscribe();
+   // this.checking.unsubscribe();
   }
 
 }

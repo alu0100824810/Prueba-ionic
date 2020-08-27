@@ -5,6 +5,7 @@ import { MessagesService } from '@core/services/messages.service';
 import { FirebaseAppService } from '@core/services/firebase-app.service';
 import { LoginService } from '@core/services/login.service';
 import { AlertController, NavController } from '@ionic/angular';
+import { generateDateNow } from 'app/shared/utils/functionsUtils';
 
 @Component({
   selector: 'app-fill-out-form',
@@ -41,11 +42,10 @@ export class FillOutFormPage implements OnInit {
   async getData() {   // TODO: FECHA PRUEBA
     try {
       await this.messages.showSpinner('Cargando...');
-      const MyDate = new Date();
-      this.infoService.dateToday = ('0' + MyDate.getDate()).slice(-2) + '-' + ('0' + (MyDate.getMonth() + 1)).slice(-2) + '-' + MyDate.getFullYear();
+      this.infoService.dateToday = generateDateNow();
       this.infoService.category = this.activatedRoute.snapshot.params.category;
       this.infoService.uid = this.loginService.user.uid;
-      const result = await this.firebaseAppService.getFormByID(this.infoService.category, '27-07-2020', this.infoService.uid);
+      const result = await this.firebaseAppService.getFormByID(this.infoService.category, generateDateNow(), this.infoService.uid);
       result.subscribe((res: any) => {
         this.form = res.payload.data();
         const r: FormInfo = JSON.parse(JSON.stringify(this.form));

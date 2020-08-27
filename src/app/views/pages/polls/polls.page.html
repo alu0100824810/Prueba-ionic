@@ -1,0 +1,25 @@
+<app-header [showBackButton]="true" name="Encuestas"></app-header>
+
+<ion-content class="ion-padding">
+
+  <ng-container *ngIf="data === null">
+    <div class="not-available">
+      <p>No hay encuestas disponibles.</p>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="data !== null">
+    <ion-card>
+      <img [src]="data.img" />
+      <ion-card-header>
+        <ion-card-title>{{data.message}}</ion-card-title>
+      </ion-card-header>
+      <ng-container [ngSwitch]="done">
+        <ion-button *ngSwitchCase="true" expand="block" shape="round" disabled="true">Encuesta realizada</ion-button>
+        <ion-button *ngSwitchCase="false" expand="block" shape="round" [routerLink]="['./fill-out/' + data.id]">Hacer encuesta</ion-button>
+      </ng-container>
+    </ion-card>
+
+  </ng-container>
+  
+</ion-content>

@@ -179,6 +179,12 @@
       var _core_services_login_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @core/services/login.service */
       "./src/app/core/services/login.service.ts");
+      /* harmony import */
+
+
+      var app_shared_utils_functionsUtils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      /*! app/shared/utils/functionsUtils */
+      "./src/app/shared/utils/functionsUtils.ts");
 
       var ButtonStartFormPage = /*#__PURE__*/function () {
         function ButtonStartFormPage(activatedRoute, alertController, messages, firebaseAppService, navCtrl, loginService) {
@@ -208,7 +214,7 @@
             return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
               var _this = this;
 
-              var MyDate, prueba;
+              var prueba;
               return regeneratorRuntime.wrap(function _callee2$(_context2) {
                 while (1) {
                   switch (_context2.prev = _context2.next) {
@@ -218,15 +224,13 @@
                       return this.messages.showSpinner();
 
                     case 3:
-                      MyDate = new Date();
-                      this.infoService.dateToday = ('0' + MyDate.getDate()).slice(-2) + '-' + ('0' + (MyDate.getMonth() + 1)).slice(-2) + '-' + MyDate.getFullYear();
+                      this.infoService.dateToday = Object(app_shared_utils_functionsUtils__WEBPACK_IMPORTED_MODULE_7__["generateDateNow"])();
                       this.infoService.category = this.activatedRoute.snapshot.params.category;
-                      this.infoService.uid = this.loginService.user.uid; // TODO: LA FECHA ES DE PRUEBA
+                      this.infoService.uid = this.loginService.user.uid;
+                      _context2.next = 8;
+                      return this.firebaseAppService.getFormByID(this.infoService.category, Object(app_shared_utils_functionsUtils__WEBPACK_IMPORTED_MODULE_7__["generateDateNow"])(), this.infoService.uid);
 
-                      _context2.next = 9;
-                      return this.firebaseAppService.getFormByID(this.infoService.category, '27-07-2020', this.infoService.uid);
-
-                    case 9:
+                    case 8:
                       prueba = _context2.sent;
                       this.result = prueba.subscribe(function (res) {
                         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
@@ -262,34 +266,34 @@
                           }, _callee, this);
                         }));
                       });
-                      _context2.next = 20;
+                      _context2.next = 19;
                       break;
 
-                    case 13:
-                      _context2.prev = 13;
+                    case 12:
+                      _context2.prev = 12;
                       _context2.t0 = _context2["catch"](0);
                       console.error(_context2.t0);
-                      _context2.next = 18;
+                      _context2.next = 17;
                       return this.messages.hideSpinner();
 
-                    case 18:
-                      _context2.next = 20;
+                    case 17:
+                      _context2.next = 19;
                       return this.showAlert('Se ha producido un error.', 'Error');
 
-                    case 20:
-                      _context2.prev = 20;
-                      _context2.next = 23;
+                    case 19:
+                      _context2.prev = 19;
+                      _context2.next = 22;
                       return this.messages.hideSpinner();
 
-                    case 23:
-                      return _context2.finish(20);
+                    case 22:
+                      return _context2.finish(19);
 
-                    case 24:
+                    case 23:
                     case "end":
                       return _context2.stop();
                   }
                 }
-              }, _callee2, this, [[0, 13, 20, 24]]);
+              }, _callee2, this, [[0, 12, 19, 23]]);
             }));
           }
           /**

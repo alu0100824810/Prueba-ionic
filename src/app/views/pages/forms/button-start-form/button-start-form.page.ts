@@ -6,6 +6,7 @@ import { FirebaseAppService } from '@core/services/firebase-app.service';
 import { FormInfo } from 'app/shared/models/FormModel';
 import { LoginService } from '@core/services/login.service';
 import { Observable } from 'rxjs';
+import { generateDateNow } from 'app/shared/utils/functionsUtils';
 
 
 @Component({
@@ -40,12 +41,10 @@ export class ButtonStartFormPage implements OnInit , OnDestroy {
   async checkForm() {
     try {
       await this.messages.showSpinner();
-      const MyDate = new Date();
-      this.infoService.dateToday = ('0' + MyDate.getDate()).slice(-2) + '-' + ('0' + (MyDate.getMonth() + 1)).slice(-2) + '-' + MyDate.getFullYear();
+      this.infoService.dateToday = generateDateNow();
       this.infoService.category = this.activatedRoute.snapshot.params.category;
       this.infoService.uid = this.loginService.user.uid;
-      // TODO: LA FECHA ES DE PRUEBA
-      let prueba = await this.firebaseAppService.getFormByID(this.infoService.category, '27-07-2020', this.infoService.uid);
+      let prueba = await this.firebaseAppService.getFormByID(this.infoService.category, generateDateNow(), this.infoService.uid);
       this.result = prueba.subscribe( async (res: any) => {
         const r: FormInfo =  await res.payload.data();
         this.infoService.done = r.info.done;
