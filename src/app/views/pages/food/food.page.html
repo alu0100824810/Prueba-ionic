@@ -1,0 +1,23 @@
+<app-header [showBackButton]="true" name="Comida"></app-header>
+
+
+<ion-content class="ion-padding">
+
+  <ng-container *ngIf="data === null">
+    <div class="not-available">
+      <p>No hay ofertas disponibles.</p>
+    </div>
+  </ng-container>
+
+
+  <ng-container *ngIf="data !== null">
+    <ion-card>
+      <img [src]="data.img" />
+      <ion-card-header>
+        <ion-card-title>{{data.message}}</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+  </ng-container>
+
+
+</ion-content>

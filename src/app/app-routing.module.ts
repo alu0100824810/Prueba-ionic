@@ -57,6 +57,28 @@ const routes: Routes = [
       }
     ]
   },
+  {
+    path: 'food',
+    loadChildren: () => import('./views/pages/food/food.module').then(m => m.FoodPageModule)
+  },
+  {
+    path: 'offers-shop-tickets',
+    loadChildren: () => import('./views/pages/offers-shop-tickets/offers-shop-tickets.module').then(m => m.OffersShopTicketsPageModule)
+  },
+  {
+    path: 'polls',
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./views/pages/polls/polls.module').then(m => m.PollsPageModule)
+      },
+      {
+        path: 'fill-out/:id',
+        loadChildren: () => import('./views/pages/polls/fill-out/fill-out.module').then(m => m.FillOutPageModule)
+      }
+    ]
+  },
+
 
 ];
 

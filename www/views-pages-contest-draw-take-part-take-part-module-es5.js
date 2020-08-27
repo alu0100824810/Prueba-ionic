@@ -170,24 +170,23 @@
       /* harmony import */
 
 
-      var _core_services_login_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-      /*! @core/services/login.service */
-      "./src/app/core/services/login.service.ts");
+      var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! @ionic/angular */
+      "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
       /* harmony import */
 
 
-      var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
-      /*! @ionic/angular */
-      "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+      var app_shared_utils_functionsUtils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! app/shared/utils/functionsUtils */
+      "./src/app/shared/utils/functionsUtils.ts");
 
       var TakePartPage = /*#__PURE__*/function () {
-        function TakePartPage(activatedRoute, firebaseAppService, messages, loginService, alertController, navCtrl) {
+        function TakePartPage(activatedRoute, firebaseAppService, messages, alertController, navCtrl) {
           _classCallCheck(this, TakePartPage);
 
           this.activatedRoute = activatedRoute;
           this.firebaseAppService = firebaseAppService;
           this.messages = messages;
-          this.loginService = loginService;
           this.alertController = alertController;
           this.navCtrl = navCtrl;
           this.data = null;
@@ -210,108 +209,73 @@
         }, {
           key: "getInfo",
           value: function getInfo() {
-            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
               var _this = this;
 
-              var MyDate, res, r;
-              return regeneratorRuntime.wrap(function _callee3$(_context3) {
+              var res;
+              return regeneratorRuntime.wrap(function _callee2$(_context2) {
                 while (1) {
-                  switch (_context3.prev = _context3.next) {
+                  switch (_context2.prev = _context2.next) {
                     case 0:
-                      _context3.prev = 0;
-                      _context3.next = 3;
+                      _context2.prev = 0;
+                      _context2.next = 3;
                       return this.messages.showSpinner();
 
                     case 3:
-                      MyDate = new Date();
-                      this.date = ('0' + MyDate.getDate()).slice(-2) + '-' + ('0' + (MyDate.getMonth() + 1)).slice(-2) + '-' + MyDate.getFullYear();
-                      _context3.next = 7;
-                      return this.firebaseAppService.getDataUniqueDraw('27-07-2020', this.activatedRoute.snapshot.params.id);
+                      _context2.next = 5;
+                      return this.firebaseAppService.getDataUniqueDraw(Object(app_shared_utils_functionsUtils__WEBPACK_IMPORTED_MODULE_6__["generateDateNow"])(), this.activatedRoute.snapshot.params.id);
 
-                    case 7:
-                      res = _context3.sent;
-                      _context3.next = 10;
-                      return this.firebaseAppService.checkUserHasParticipated('27-07-2020', this.activatedRoute.snapshot.params.id);
-
-                    case 10:
-                      r = _context3.sent;
-                      _context3.next = 13;
-                      return r.subscribe(function (datos) {
+                    case 5:
+                      res = _context2.sent;
+                      _context2.next = 8;
+                      return res.subscribe(function (d) {
                         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-                          var _this2 = this;
-
                           return regeneratorRuntime.wrap(function _callee$(_context) {
                             while (1) {
                               switch (_context.prev = _context.next) {
                                 case 0:
                                   _context.next = 2;
-                                  return datos.forEach(function (item) {
-                                    var check = item.payload.doc.data();
-
-                                    if (check.uid && check.uid === _this2.loginService.user.uid) {
-                                      _this2.participated = true;
-                                    }
-                                  });
+                                  return d.payload.data();
 
                                 case 2:
+                                  this.data = _context.sent;
+                                  this.participated = this.data.participated ? this.data.participated : false;
+
+                                case 4:
                                 case "end":
                                   return _context.stop();
                               }
                             }
-                          }, _callee);
+                          }, _callee, this);
                         }));
                       });
 
-                    case 13:
-                      this.checking = _context3.sent;
-                      _context3.next = 16;
-                      return res.subscribe(function (d) {
-                        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
-                          return regeneratorRuntime.wrap(function _callee2$(_context2) {
-                            while (1) {
-                              switch (_context2.prev = _context2.next) {
-                                case 0:
-                                  _context2.next = 2;
-                                  return d.payload.data();
-
-                                case 2:
-                                  this.data = _context2.sent;
-
-                                case 3:
-                                case "end":
-                                  return _context2.stop();
-                              }
-                            }
-                          }, _callee2, this);
-                        }));
-                      });
-
-                    case 16:
-                      this.result = _context3.sent;
-                      _context3.next = 24;
+                    case 8:
+                      this.result = _context2.sent;
+                      _context2.next = 16;
                       break;
 
+                    case 11:
+                      _context2.prev = 11;
+                      _context2.t0 = _context2["catch"](0);
+                      console.error(_context2.t0);
+                      _context2.next = 16;
+                      return this.messages.hideSpinner();
+
+                    case 16:
+                      _context2.prev = 16;
+                      _context2.next = 19;
+                      return this.messages.hideSpinner();
+
                     case 19:
-                      _context3.prev = 19;
-                      _context3.t0 = _context3["catch"](0);
-                      console.error(_context3.t0);
-                      _context3.next = 24;
-                      return this.messages.hideSpinner();
+                      return _context2.finish(16);
 
-                    case 24:
-                      _context3.prev = 24;
-                      _context3.next = 27;
-                      return this.messages.hideSpinner();
-
-                    case 27:
-                      return _context3.finish(24);
-
-                    case 28:
+                    case 20:
                     case "end":
-                      return _context3.stop();
+                      return _context2.stop();
                   }
                 }
-              }, _callee3, this, [[0, 19, 24, 28]]);
+              }, _callee2, this, [[0, 11, 16, 20]]);
             }));
           }
           /**
@@ -321,15 +285,15 @@
         }, {
           key: "takePartDraw",
           value: function takePartDraw() {
-            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee5() {
-              var _this3 = this;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
+              var _this2 = this;
 
               var alert;
-              return regeneratorRuntime.wrap(function _callee5$(_context5) {
+              return regeneratorRuntime.wrap(function _callee4$(_context4) {
                 while (1) {
-                  switch (_context5.prev = _context5.next) {
+                  switch (_context4.prev = _context4.next) {
                     case 0:
-                      _context5.next = 2;
+                      _context4.next = 2;
                       return this.alertController.create({
                         cssClass: 'my-custom-class',
                         header: 'Aviso',
@@ -340,74 +304,76 @@
                         }, {
                           text: 'Aceptar',
                           handler: function handler() {
-                            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this3, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
-                              return regeneratorRuntime.wrap(function _callee4$(_context4) {
+                            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this2, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
+                              return regeneratorRuntime.wrap(function _callee3$(_context3) {
                                 while (1) {
-                                  switch (_context4.prev = _context4.next) {
+                                  switch (_context3.prev = _context3.next) {
                                     case 0:
-                                      _context4.prev = 0;
-                                      _context4.next = 3;
+                                      _context3.prev = 0;
+                                      _context3.next = 3;
                                       return this.messages.showSpinner('Cargando...');
 
                                     case 3:
-                                      this.user.email = this.loginService.user.email;
-                                      this.user.uid = this.loginService.user.uid;
-                                      _context4.next = 7;
-                                      return this.firebaseAppService.takePartOnlyDraw('27-07-2020', this.activatedRoute.snapshot.params.id, this.user);
+                                      this.data.participated = true;
+                                      _context3.next = 6;
+                                      return this.firebaseAppService.updateParticiped(Object(app_shared_utils_functionsUtils__WEBPACK_IMPORTED_MODULE_6__["generateDateNow"])(), this.activatedRoute.snapshot.params.id, this.data);
 
-                                    case 7:
-                                      _context4.next = 9;
+                                    case 6:
+                                      _context3.next = 8;
+                                      return this.firebaseAppService.takePartOnlyDraw(Object(app_shared_utils_functionsUtils__WEBPACK_IMPORTED_MODULE_6__["generateDateNow"])(), this.activatedRoute.snapshot.params.id);
+
+                                    case 8:
+                                      _context3.next = 10;
                                       return this.messages.showToast('Su participación se ha realizado con éxito');
 
-                                    case 9:
+                                    case 10:
                                       this.navCtrl.back();
-                                      _context4.next = 17;
+                                      _context3.next = 18;
                                       break;
 
-                                    case 12:
-                                      _context4.prev = 12;
-                                      _context4.t0 = _context4["catch"](0);
-                                      console.error(_context4.t0);
-                                      _context4.next = 17;
+                                    case 13:
+                                      _context3.prev = 13;
+                                      _context3.t0 = _context3["catch"](0);
+                                      console.error(_context3.t0);
+                                      _context3.next = 18;
                                       return this.messages.hideSpinner();
 
-                                    case 17:
-                                      _context4.prev = 17;
-                                      _context4.next = 20;
+                                    case 18:
+                                      _context3.prev = 18;
+                                      _context3.next = 21;
                                       return this.messages.hideSpinner();
-
-                                    case 20:
-                                      return _context4.finish(17);
 
                                     case 21:
+                                      return _context3.finish(18);
+
+                                    case 22:
                                     case "end":
-                                      return _context4.stop();
+                                      return _context3.stop();
                                   }
                                 }
-                              }, _callee4, this, [[0, 12, 17, 21]]);
+                              }, _callee3, this, [[0, 13, 18, 22]]);
                             }));
                           }
                         }]
                       });
 
                     case 2:
-                      alert = _context5.sent;
-                      _context5.next = 5;
+                      alert = _context4.sent;
+                      _context4.next = 5;
                       return alert.present();
 
                     case 5:
                     case "end":
-                      return _context5.stop();
+                      return _context4.stop();
                   }
                 }
-              }, _callee5, this);
+              }, _callee4, this);
             }));
           }
         }, {
           key: "ngOnDestroy",
           value: function ngOnDestroy() {
-            this.result.unsubscribe();
-            this.checking.unsubscribe();
+            this.result.unsubscribe(); // this.checking.unsubscribe();
           }
         }]);
 
@@ -422,11 +388,9 @@
         }, {
           type: _core_services_messages_service__WEBPACK_IMPORTED_MODULE_4__["MessagesService"]
         }, {
-          type: _core_services_login_service__WEBPACK_IMPORTED_MODULE_5__["LoginService"]
+          type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["AlertController"]
         }, {
-          type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["AlertController"]
-        }, {
-          type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["NavController"]
+          type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["NavController"]
         }];
       };
 
@@ -438,7 +402,7 @@
         styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
         /*! ./take-part.page.scss */
         "./src/app/views/pages/contest-draw/take-part/take-part.page.scss"))["default"]]
-      }), Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _core_services_firebase_app_service__WEBPACK_IMPORTED_MODULE_3__["FirebaseAppService"], _core_services_messages_service__WEBPACK_IMPORTED_MODULE_4__["MessagesService"], _core_services_login_service__WEBPACK_IMPORTED_MODULE_5__["LoginService"], _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["AlertController"], _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["NavController"]])], TakePartPage);
+      }), Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _core_services_firebase_app_service__WEBPACK_IMPORTED_MODULE_3__["FirebaseAppService"], _core_services_messages_service__WEBPACK_IMPORTED_MODULE_4__["MessagesService"], _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["AlertController"], _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["NavController"]])], TakePartPage);
       /***/
     }
   }]);

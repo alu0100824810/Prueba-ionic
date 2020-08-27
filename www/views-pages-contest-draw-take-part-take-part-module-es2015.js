@@ -86,8 +86,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
 /* harmony import */ var _core_services_firebase_app_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @core/services/firebase-app.service */ "./src/app/core/services/firebase-app.service.ts");
 /* harmony import */ var _core_services_messages_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @core/services/messages.service */ "./src/app/core/services/messages.service.ts");
-/* harmony import */ var _core_services_login_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @core/services/login.service */ "./src/app/core/services/login.service.ts");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+/* harmony import */ var app_shared_utils_functionsUtils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! app/shared/utils/functionsUtils */ "./src/app/shared/utils/functionsUtils.ts");
 
 
 
@@ -96,11 +96,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let TakePartPage = class TakePartPage {
-    constructor(activatedRoute, firebaseAppService, messages, loginService, alertController, navCtrl) {
+    constructor(activatedRoute, firebaseAppService, messages, alertController, navCtrl) {
         this.activatedRoute = activatedRoute;
         this.firebaseAppService = firebaseAppService;
         this.messages = messages;
-        this.loginService = loginService;
         this.alertController = alertController;
         this.navCtrl = navCtrl;
         this.data = null;
@@ -120,20 +119,10 @@ let TakePartPage = class TakePartPage {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
             try {
                 yield this.messages.showSpinner();
-                const MyDate = new Date();
-                this.date = ('0' + MyDate.getDate()).slice(-2) + '-' + ('0' + (MyDate.getMonth() + 1)).slice(-2) + '-' + MyDate.getFullYear();
-                const res = yield this.firebaseAppService.getDataUniqueDraw('27-07-2020', this.activatedRoute.snapshot.params.id); // ! OJO: FECHA DE PRUEBA
-                const r = yield this.firebaseAppService.checkUserHasParticipated('27-07-2020', this.activatedRoute.snapshot.params.id);
-                this.checking = yield r.subscribe((datos) => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-                    yield datos.forEach(item => {
-                        const check = item.payload.doc.data();
-                        if (check.uid && check.uid === this.loginService.user.uid) {
-                            this.participated = true;
-                        }
-                    });
-                }));
+                const res = yield this.firebaseAppService.getDataUniqueDraw(Object(app_shared_utils_functionsUtils__WEBPACK_IMPORTED_MODULE_6__["generateDateNow"])(), this.activatedRoute.snapshot.params.id);
                 this.result = yield res.subscribe((d) => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
                     this.data = yield d.payload.data();
+                    this.participated = this.data.participated ? this.data.participated : false;
                 }));
             }
             catch (error) {
@@ -164,9 +153,9 @@ let TakePartPage = class TakePartPage {
                         handler: () => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
                             try {
                                 yield this.messages.showSpinner('Cargando...');
-                                this.user.email = this.loginService.user.email;
-                                this.user.uid = this.loginService.user.uid;
-                                yield this.firebaseAppService.takePartOnlyDraw('27-07-2020', this.activatedRoute.snapshot.params.id, this.user); // ! OJO: FECHA DE PRUEBA
+                                this.data.participated = true;
+                                yield this.firebaseAppService.updateParticiped(Object(app_shared_utils_functionsUtils__WEBPACK_IMPORTED_MODULE_6__["generateDateNow"])(), this.activatedRoute.snapshot.params.id, this.data);
+                                yield this.firebaseAppService.takePartOnlyDraw(Object(app_shared_utils_functionsUtils__WEBPACK_IMPORTED_MODULE_6__["generateDateNow"])(), this.activatedRoute.snapshot.params.id);
                                 yield this.messages.showToast('Su participación se ha realizado con éxito');
                                 this.navCtrl.back();
                             }
@@ -186,16 +175,15 @@ let TakePartPage = class TakePartPage {
     }
     ngOnDestroy() {
         this.result.unsubscribe();
-        this.checking.unsubscribe();
+        // this.checking.unsubscribe();
     }
 };
 TakePartPage.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] },
     { type: _core_services_firebase_app_service__WEBPACK_IMPORTED_MODULE_3__["FirebaseAppService"] },
     { type: _core_services_messages_service__WEBPACK_IMPORTED_MODULE_4__["MessagesService"] },
-    { type: _core_services_login_service__WEBPACK_IMPORTED_MODULE_5__["LoginService"] },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["AlertController"] },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["NavController"] }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["AlertController"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["NavController"] }
 ];
 TakePartPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -206,9 +194,8 @@ TakePartPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
         _core_services_firebase_app_service__WEBPACK_IMPORTED_MODULE_3__["FirebaseAppService"],
         _core_services_messages_service__WEBPACK_IMPORTED_MODULE_4__["MessagesService"],
-        _core_services_login_service__WEBPACK_IMPORTED_MODULE_5__["LoginService"],
-        _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["AlertController"],
-        _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["NavController"]])
+        _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["AlertController"],
+        _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["NavController"]])
 ], TakePartPage);
 
 

@@ -48,6 +48,10 @@
 	<string>Allow Geolocation?</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>La App CD Tenerife necesita su ubicación en todo momento para poder interactuar con los Beacons.</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>La App CD Tenerife necesita que esté el Bluetooth activado para el uso de los Beacons.</string>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>La App CD Tenerife necesita que esté el Bluetooth activado para el uso de los Beacons.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Store camera photos to camera</string>
 	<key>NSPhotoLibraryUsageDescription</key>

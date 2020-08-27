@@ -32,11 +32,11 @@
         <fa-icon [icon]="icons.shop"></fa-icon>
         <ion-label>Tienda</ion-label>
       </ion-item>
-      <ion-item lines="none" (click)="closeMenu()">
+      <ion-item (click)="closeMenu('offers-shop-tickets')">
         <fa-icon [icon]="icons.offers"></fa-icon>
         <ion-label>Ofertas</ion-label>
       </ion-item>
-      <ion-item (click)="closeMenu()">
+      <ion-item lines="none" (click)="closeMenu('food')">
         <fa-icon [icon]="icons.food"></fa-icon>
         <ion-label>Comida</ion-label>
       </ion-item>
@@ -45,7 +45,7 @@
         <fa-icon [icon]="icons.award"></fa-icon>
         <ion-label>Concursos y sorteos</ion-label>
       </ion-item>
-      <ion-item lines="none" (click)="closeMenu('category-forms')">
+      <ion-item lines="none" (click)="closeMenu('polls')">
         <fa-icon [icon]="icons.quiz"></fa-icon>
         <ion-label>Encuestas y opiniones</ion-label>
       </ion-item>

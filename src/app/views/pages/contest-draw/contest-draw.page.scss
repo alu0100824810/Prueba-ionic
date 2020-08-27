@@ -1,5 +1,11 @@
 
 
+.not-available{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
 
 ion-card-header {
     --background: var(--ion-color-secondary);

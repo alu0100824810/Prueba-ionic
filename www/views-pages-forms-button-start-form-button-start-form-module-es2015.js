@@ -88,6 +88,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _core_services_messages_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @core/services/messages.service */ "./src/app/core/services/messages.service.ts");
 /* harmony import */ var _core_services_firebase_app_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @core/services/firebase-app.service */ "./src/app/core/services/firebase-app.service.ts");
 /* harmony import */ var _core_services_login_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @core/services/login.service */ "./src/app/core/services/login.service.ts");
+/* harmony import */ var app_shared_utils_functionsUtils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! app/shared/utils/functionsUtils */ "./src/app/shared/utils/functionsUtils.ts");
+
 
 
 
@@ -116,12 +118,10 @@ let ButtonStartFormPage = class ButtonStartFormPage {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
             try {
                 yield this.messages.showSpinner();
-                const MyDate = new Date();
-                this.infoService.dateToday = ('0' + MyDate.getDate()).slice(-2) + '-' + ('0' + (MyDate.getMonth() + 1)).slice(-2) + '-' + MyDate.getFullYear();
+                this.infoService.dateToday = Object(app_shared_utils_functionsUtils__WEBPACK_IMPORTED_MODULE_7__["generateDateNow"])();
                 this.infoService.category = this.activatedRoute.snapshot.params.category;
                 this.infoService.uid = this.loginService.user.uid;
-                // TODO: LA FECHA ES DE PRUEBA
-                let prueba = yield this.firebaseAppService.getFormByID(this.infoService.category, '27-07-2020', this.infoService.uid);
+                let prueba = yield this.firebaseAppService.getFormByID(this.infoService.category, Object(app_shared_utils_functionsUtils__WEBPACK_IMPORTED_MODULE_7__["generateDateNow"])(), this.infoService.uid);
                 this.result = prueba.subscribe((res) => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
                     const r = yield res.payload.data();
                     this.infoService.done = r.info.done;

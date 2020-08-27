@@ -1,31 +1,33 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ContestDraw } from 'app/shared/models/Contest-Draw.Model';
 import { FirebaseAppService } from '@core/services/firebase-app.service';
 import { MessagesService } from '@core/services/messages.service';
+import { generateDateNow } from 'app/shared/utils/functionsUtils';
+
 
 @Component({
   selector: 'app-contest-draw',
   templateUrl: './contest-draw.page.html',
   styleUrls: ['./contest-draw.page.scss'],
 })
-export class ContestDrawPage implements OnInit, OnDestroy {
+export class ContestDrawPage implements OnInit {
 
   data: Array<ContestDraw> = [];
-  date;
 
-  result: any; // TODO: CAMBIAR NOMBRE
+  constructor(private firebaseAppService: FirebaseAppService, private messages: MessagesService) { 
+    this.getData();
+  }
 
-  constructor(private firebaseAppService: FirebaseAppService, private messages: MessagesService) { }
+   ngOnInit() {}
 
-  async ngOnInit() {
+  async getData() {
     try {
       await this.messages.showSpinner('Cargando...');
-      const MyDate = new Date();
-      this.date = ('0' + MyDate.getDate()).slice(-2) + '-' + ('0' + (MyDate.getMonth() + 1)).slice(-2) + '-' + MyDate.getFullYear();
-      const res = await this.firebaseAppService.getAllDraw('27-07-2020');  // TODO: FECHA DE PRUEBA
-      this.result = res.subscribe((d: any) => { // ! OJO: CON EL SUBCRIBE- DESUCRBIBE
-        d.forEach(item => {
-          this.data.push(item.payload.doc.data());
+      await this.firebaseAppService.getAllDrawFilterByUser(generateDateNow()).then((resul: any) => {
+        resul.subscribe(async (dat: any) => {
+          await dat.forEach(item => {
+            this.data.push(item.payload.doc.data());
+          });
         });
       });
     } catch (error) {
@@ -34,10 +36,7 @@ export class ContestDrawPage implements OnInit, OnDestroy {
     } finally {
       await this.messages.hideSpinner();
     }
-  }
-
-  ngOnDestroy() {
-    this.result.unsubscribe();
+    console.log(this.data);
   }
 
 }

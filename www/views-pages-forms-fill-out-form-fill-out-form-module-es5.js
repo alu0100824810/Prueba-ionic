@@ -191,6 +191,12 @@
       var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @ionic/angular */
       "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+      /* harmony import */
+
+
+      var app_shared_utils_functionsUtils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      /*! app/shared/utils/functionsUtils */
+      "./src/app/shared/utils/functionsUtils.ts");
 
       var FillOutFormPage = /*#__PURE__*/function () {
         function FillOutFormPage(firebaseAppService, activatedRoute, messages, loginService, alertController, router, navCtrl) {
@@ -225,7 +231,7 @@
             return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
               var _this = this;
 
-              var MyDate, result;
+              var result;
               return regeneratorRuntime.wrap(function _callee$(_context) {
                 while (1) {
                   switch (_context.prev = _context.next) {
@@ -235,14 +241,13 @@
                       return this.messages.showSpinner('Cargando...');
 
                     case 3:
-                      MyDate = new Date();
-                      this.infoService.dateToday = ('0' + MyDate.getDate()).slice(-2) + '-' + ('0' + (MyDate.getMonth() + 1)).slice(-2) + '-' + MyDate.getFullYear();
+                      this.infoService.dateToday = Object(app_shared_utils_functionsUtils__WEBPACK_IMPORTED_MODULE_7__["generateDateNow"])();
                       this.infoService.category = this.activatedRoute.snapshot.params.category;
                       this.infoService.uid = this.loginService.user.uid;
-                      _context.next = 9;
-                      return this.firebaseAppService.getFormByID(this.infoService.category, '27-07-2020', this.infoService.uid);
+                      _context.next = 8;
+                      return this.firebaseAppService.getFormByID(this.infoService.category, Object(app_shared_utils_functionsUtils__WEBPACK_IMPORTED_MODULE_7__["generateDateNow"])(), this.infoService.uid);
 
-                    case 9:
+                    case 8:
                       result = _context.sent;
                       result.subscribe(function (res) {
                         _this.form = res.payload.data();
@@ -251,38 +256,38 @@
                           _this.data.push(item);
                         });
                       });
-                      _context.next = 22;
+                      _context.next = 21;
                       break;
 
-                    case 13:
-                      _context.prev = 13;
+                    case 12:
+                      _context.prev = 12;
                       _context.t0 = _context["catch"](0);
                       console.error(_context.t0);
-                      _context.next = 18;
+                      _context.next = 17;
                       return this.messages.hideSpinner();
 
-                    case 18:
-                      _context.next = 20;
+                    case 17:
+                      _context.next = 19;
                       return this.showAlertError('No se ha podido obtener los datos del formulario.');
 
-                    case 20:
+                    case 19:
                       this.form = null;
                       this.data = [];
 
-                    case 22:
-                      _context.prev = 22;
-                      _context.next = 25;
+                    case 21:
+                      _context.prev = 21;
+                      _context.next = 24;
                       return this.messages.hideSpinner();
 
-                    case 25:
-                      return _context.finish(22);
+                    case 24:
+                      return _context.finish(21);
 
-                    case 26:
+                    case 25:
                     case "end":
                       return _context.stop();
                   }
                 }
-              }, _callee, this, [[0, 13, 22, 26]]);
+              }, _callee, this, [[0, 12, 21, 25]]);
             }));
           }
           /**

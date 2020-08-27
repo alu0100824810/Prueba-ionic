@@ -5,6 +5,8 @@ export interface ContestDraw {
     img: string;
     info: string;
     date?: Date;
+    winner?: boolean;
+    participated?: boolean;
 }
 
 export interface Participating {
